@@ -1,0 +1,68 @@
+﻿<Window x:Class="Frontend.View.BoardTasksView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frontend.View" xmlns:viewmodel="clr-namespace:Frontend.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:BoardTasksViewModel}"
+        mc:Ignorable="d"
+        Title="BoardTasksView" Height="450" Width="800" Background="Black">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Background="Black">
+            <Label Content="{Binding Path=Title, Mode=OneTime}" HorizontalAlignment="Center" Foreground="White"  FontStyle="Normal" FontSize="22" FontWeight="Bold" Background="Black" FontStretch="Medium" />
+            <Label Content="Backlog tasks" HorizontalAlignment="Left" Foreground="White"  FontStyle="Normal" FontSize="16" FontWeight="Bold" Background="Black" FontStretch="Medium"/>
+            <ListBox ItemsSource="{Binding Path=BackLogTasks}" Background="Black" Height="175">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1" BorderBrush="White">
+                            <StackPanel Orientation="Vertical" >
+                                <Label Content="{Binding Path=Id, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                                <Label Content="{Binding Path=CreationTime, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                                <Label Content="{Binding Path=Title, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                                <Label Content="{Binding Path=Description, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                                <Label Content="{Binding Path=DueDate, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                                <Label Content="{Binding Path=Assignee, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Label Content="In progress Tasks" HorizontalAlignment="Left" Foreground="White"  FontStyle="Normal" FontSize="16" FontWeight="Bold" Background="Black" FontStretch="Medium"/>
+            <ListBox ItemsSource="{Binding Path=InProgressTasks}" Background="Black" Height="175">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1" BorderBrush="White">
+                            <StackPanel Orientation="Vertical" >
+                                <Label Content="{Binding Path=Id, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                                <Label Content="{Binding Path=CreationTime, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                                <Label Content="{Binding Path=Title, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                                <Label Content="{Binding Path=Description, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                                <Label Content="{Binding Path=DueDate, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                                <Label Content="{Binding Path=Assignee, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Label Content="Done Tasks" HorizontalAlignment="Left" Foreground="White"  FontStyle="Normal" FontSize="16" FontWeight="Bold" Background="Black" FontStretch="Medium"/>
+            <ListBox ItemsSource="{Binding Path=DoneTasks}" Background="Black" Height="175">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1" BorderBrush="White" Background="Black">
+                            <StackPanel Orientation="Vertical" >
+                                <Label Content="{Binding Path=Id, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                                <Label Content="{Binding Path=CreationTime, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                                <Label Content="{Binding Path=Title, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                                <Label Content="{Binding Path=Description, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                                <Label Content="{Binding Path=DueDate, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                                <Label Content="{Binding Path=Assignee, Mode=TwoWay}" BorderBrush="Black" FontFamily="Segoe UI Bold" Background="Black" Foreground="White" BorderThickness="2" FontWeight="UltraBold" Width="200" FontSize="12"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</Window>
